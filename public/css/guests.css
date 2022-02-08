@@ -1,0 +1,42 @@
+html {
+  text-align: center;
+}
+
+input,
+label,
+select {
+  width: 180px;
+  margin: 10px;
+  font-size: 18px;
+}
+
+input[type="checkbox"] {
+  margin-left: -70px;
+}
+
+.btns {
+  margin-top: 30px;
+}
+
+input[type="button"] {
+  margin: 20px;
+  padding: 8px;
+  background-color: rgb(166, 173, 155);
+  border: 2px solid grey;
+}
+
+.showInformation {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+.guestDiv {
+  width: 300px;
+  height: auto;
+  background-color: rgb(235, 252, 246);
+  margin: 20px;
+  font-size: 18px;
+  border: 2px solid gray;
+}

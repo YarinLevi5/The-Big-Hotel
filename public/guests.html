@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <title>Guests</title>
+    <link rel="stylesheet" href="css/guests.css" />
+  </head>
+  <body>
+    <div class="guests-container">
+      <h1>Guests</h1>
+      <label>Name :</label>
+      <input type="text" placeholder="Enter Name" data-role="name" />
+      <label>Gender :</label>
+      <select name="genderList">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+      <label>Birthday :</label>
+      <input type="date" data-role="date" />
+      <label>VIP :</label>
+      <input type="checkbox" data-role="vip" />
+      <div class="btns">
+        <input type="button" value="Insert" data-role="insert-guest" />
+        <input type="button" value="Find" data-role="find-guests" />
+        <input type="button" value="Find By Id" data-role="find-guest" />
+        <input type="button" value="Update" data-role="update-guest" />
+        <input type="button" value="Save" data-role="save-guest" />
+        <input type="button" value="Delete" data-role="delete-guest" />
+        <input type="button" value="Female guests" data-role="female-guest" />
+      </div>
+      <div class="showInformation"></div>
+    </div>
+  </body>
+  <script src="js/guests.js"></script>
+</html>

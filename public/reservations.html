@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <title>Reservation</title>
+    <link rel="stylesheet" href="css/reservation.css" />
+  </head>
+  <body>
+    <div class="reservations-container">
+      <h1>Reservations</h1>
+      <label>Room</label>
+      <select name="roomList"></select>
+      <label>Capacity</label>
+      <input type="number" data-role="capacity" />
+      <div class="btns">
+        <input type="button" value="Insert" data-role="insert-reservation" />
+        <input type="button" value="Find" data-role="find-reservations" />
+        <input type="button" value="Find By Id" data-role="find-reservation" />
+        <input type="button" value="Update" data-role="update-reservation" />
+        <input type="button" value="Save" data-role="save-reservation" />
+        <input type="button" value="Delete" data-role="delete-reservation" />
+      </div>
+      <div class="showInformation"></div>
+    </div>
+  </body>
+  <script src="js/reservation.js"></script>
+</html>

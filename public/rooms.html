@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <title>Rooms</title>
+    <link rel="stylesheet" href="css/rooms.css" />
+  </head>
+  <body>
+    <div class="rooms-container">
+      <h1>Rooms</h1>
+      <label>Room Number</label>
+      <input type="number" data-role="room-number" />
+      <label>VIP</label>
+      <input type="checkbox" data-role="vip" />
+      <label>Bath</label>
+      <input type="checkbox" data-role="bath" />
+      <div class="btns">
+        <input type="button" value="Insert" data-role="insert-room" />
+        <input type="button" value="Find" data-role="find-rooms" />
+        <input type="button" value="Find By Id" data-role="find-room" />
+        <input type="button" value="Update" data-role="update-room" />
+        <input type="button" value="Save" data-role="save-room" />
+        <input type="button" value="Delete" data-role="delete-room" />
+      </div>
+      <div class="showInformation"></div>
+    </div>
+  </body>
+  <script src="js/rooms.js"></script>
+</html>

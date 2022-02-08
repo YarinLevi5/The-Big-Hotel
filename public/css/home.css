@@ -1,0 +1,17 @@
+.links-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 550px;
+}
+
+.links-container a {
+  padding: 20px;
+  margin: 20px;
+  font-size: 30px;
+  background-color: blue;
+  color: white;
+  width: auto;
+  text-decoration: none;
+  border: 2px solid rgb(236, 208, 156);
+}
