@@ -9,7 +9,7 @@ const roomSchema = new mongoose.Schema({
     require: true,
   },
   roomNumber: {
-    type: Boolean,
+    type: Number,
     require: true,
   },
 });

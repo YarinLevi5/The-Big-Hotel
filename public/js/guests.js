@@ -31,6 +31,13 @@ $(function () {
 
   $('[data-role="find-guests"]').click(() => {
     $.get("/guests", (guests) => {
+      $.each(guests, (_, guest) => {
+        let birthdayYear = new Date(guest.dateOfBirth).getFullYear();
+        let date = new Date().getFullYear() - 21;
+        if (birthdayYear < date) {
+          guest["canDrink"] = false;
+        }
+      });
       showAllGuests(guests);
     });
   });
@@ -119,8 +126,8 @@ $(function () {
   });
 
   $('[ data-role="female-guest"]').click(() => {
-    $.get("/guests", (guest) => {
-      console.log(guest);
+    $.get("/guests/find/femaleGuests", (guest) => {
+      showAllGuests(guest);
     });
   });
 

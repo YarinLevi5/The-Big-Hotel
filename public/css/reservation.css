@@ -20,3 +20,20 @@ input[type="button"] {
   background-color: coral;
   border: 2px solid rgb(250, 215, 215);
 }
+
+.showInformation {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 300px;
+}
+.reservationDiv {
+  width: 300px;
+  height: auto;
+  background-color: rgb(236, 158, 106);
+  margin: 20px;
+  font-size: 18px;
+  border: 2px solid rgb(247, 211, 211);
+}

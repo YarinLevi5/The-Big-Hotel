@@ -6,10 +6,17 @@ let {
   getOneGuest,
   updateOneGuest,
   deleteOneGuest,
+  femaleGuests,
 } = require("../controllers/guestsController");
 
 router.get("/", (req, res) => {
   getAllGuests()
+    .then((guests) => res.json(guests))
+    .catch((err) => console.log(err));
+});
+
+router.get("/find/femaleGuests", (req, res) => {
+  femaleGuests()
     .then((guests) => res.json(guests))
     .catch((err) => console.log(err));
 });

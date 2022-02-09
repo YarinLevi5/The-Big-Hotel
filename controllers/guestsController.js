@@ -7,6 +7,7 @@ let getAllGuests = () => {
     });
   });
 };
+
 let insertGuest = (name, gender, dateOfBirth, isVip) => {
   return new Promise((resolve, reject) => {
     let guest = new Guest({
@@ -28,6 +29,7 @@ let getOneGuest = (_id) => {
     });
   });
 };
+
 let updateOneGuest = (_id, newGuest) => {
   return new Promise((resolve, reject) => {
     Guest.findOneAndUpdate({ _id }, { $set: newGuest }, (err, guest) => {
@@ -35,9 +37,18 @@ let updateOneGuest = (_id, newGuest) => {
     });
   });
 };
+
 let deleteOneGuest = (_id) => {
   return new Promise((resolve, reject) => {
     Guest.findByIdAndDelete({ _id }, (err, guest) => {
+      err ? reject(err) : resolve(guest);
+    });
+  });
+};
+
+let femaleGuests = () => {
+  return new Promise((resolve, reject) => {
+    Guest.find({ gender: "female" }, (err, guest) => {
       err ? reject(err) : resolve(guest);
     });
   });
@@ -49,4 +60,5 @@ module.exports = {
   getOneGuest,
   updateOneGuest,
   deleteOneGuest,
+  femaleGuests,
 };

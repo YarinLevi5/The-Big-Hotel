@@ -6,12 +6,26 @@ let {
   getOneRoom,
   updateOneRoom,
   deleteOneRoom,
+  roomsWithBath,
+  roomsWithBathAndVip,
 } = require("../controllers/roomsController");
 
 router.get("/", (req, res) => {
   getAllRooms()
     .then((rooms) => res.json(rooms))
     .catch((err) => res.json(err));
+});
+
+router.get("/find/bath", (req, res) => {
+  roomsWithBath()
+    .then((rooms) => res.json(rooms))
+    .catch((err) => console.log(err));
+});
+
+router.get("/find/bathOrVip", (req, res) => {
+  roomsWithBathAndVip()
+    .then((rooms) => res.json(rooms))
+    .catch((err) => console.log(err));
 });
 
 router.post("/", (req, res) => {

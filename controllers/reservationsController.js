@@ -45,10 +45,19 @@ let deleteOneReservation = (_id) => {
   });
 };
 
+let roomsCapacity = () => {
+  return new Promise((resolve, reject) => {
+    Reservation.find({ capacity: { $gt: 3 } }, (err, reservation) => {
+      err ? reject(err) : resolve(reservation);
+    });
+  });
+};
+
 module.exports = {
   getAllReservations,
   insertReservation,
   getOneReservation,
   updateOneReservation,
   deleteOneReservation,
+  roomsCapacity,
 };

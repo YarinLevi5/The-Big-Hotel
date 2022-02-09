@@ -7,6 +7,7 @@ let getAllRooms = () => {
     });
   });
 };
+
 let insertRoom = (isVip, haveBath, roomNumber) => {
   return new Promise((resolve, reject) => {
     let room = new Room({
@@ -27,6 +28,7 @@ let getOneRoom = (_id) => {
     });
   });
 };
+
 let updateOneRoom = (_id, newRoom) => {
   return new Promise((resolve, reject) => {
     Room.findOneAndUpdate({ _id }, { $set: newRoom }, (err, room) => {
@@ -34,9 +36,26 @@ let updateOneRoom = (_id, newRoom) => {
     });
   });
 };
+
 let deleteOneRoom = (_id) => {
   return new Promise((resolve, reject) => {
     Room.findByIdAndDelete({ _id }, (err, room) => {
+      err ? reject(err) : resolve(room);
+    });
+  });
+};
+
+let roomsWithBath = () => {
+  return new Promise((resolve, reject) => {
+    Room.find({ haveBath: true }, (err, room) => {
+      err ? reject(err) : resolve(room);
+    });
+  });
+};
+
+let roomsWithBathAndVip = () => {
+  return new Promise((resolve, reject) => {
+    Room.find({ $or: [{ haveBath: true }, { isVip: true }] }, (err, room) => {
       err ? reject(err) : resolve(room);
     });
   });
@@ -48,4 +67,6 @@ module.exports = {
   getOneRoom,
   updateOneRoom,
   deleteOneRoom,
+  roomsWithBath,
+  roomsWithBathAndVip,
 };

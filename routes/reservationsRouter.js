@@ -6,12 +6,19 @@ let {
   getOneReservation,
   updateOneReservation,
   deleteOneReservation,
+  roomsCapacity,
 } = require("../controllers/reservationsController");
 
 router.get("/", (req, res) => {
   getAllReservations()
     .then((reservation) => res.json(reservation))
     .catch((err) => res.json(err));
+});
+
+router.get("/reservation/capacity", (req, res) => {
+  roomsCapacity()
+    .then((reservation) => res.send(reservation))
+    .catch((err) => console.log(err));
 });
 
 router.post("/", (req, res) => {
@@ -35,7 +42,7 @@ router.put("/:reservationId", (req, res) => {
 
 router.delete("/:reservationId", (req, res) => {
   deleteOneReservation(req.params.reservationId)
-    .then((reservation) => res.json(reservation))
+    .then((reservation) => res.send(reservation))
     .catch((err) => console.log(err));
 });
 
