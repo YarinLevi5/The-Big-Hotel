@@ -1,20 +1,20 @@
-let mongoose = require("mongoose");
+import mongoose from "mongoose"
 const guestSchema = new mongoose.Schema({
   name: {
     type: String,
-    require: true,
+    required: 'Enter name',
   },
   gender: {
     type: String,
-    require: true,
+    required:  'Choose gender',
   },
   dateOfBirth: {
     type: Date,
-    require: true,
+    required:  'Choose date',
   },
   isVip: {
     type: Boolean,
-    require: true,
+    required: true,
   },
 });
 const Guest = mongoose.model("Guest", guestSchema);

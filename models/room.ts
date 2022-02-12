@@ -1,16 +1,16 @@
-let mongoose = require("mongoose");
+import mongoose from "mongoose"
 const roomSchema = new mongoose.Schema({
   isVip: {
     type: Boolean,
-    require: true,
+    required: true,
   },
   haveBath: {
     type: Boolean,
-    require: true,
+    required: true,
   },
   roomNumber: {
     type: Number,
-    require: true,
+    required: 'Enter room number',
   },
 });
 const Room = mongoose.model("Room", roomSchema);

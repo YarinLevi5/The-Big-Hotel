@@ -8,7 +8,7 @@ let getAllGuests = () => {
   });
 };
 
-let insertGuest = (name, gender, dateOfBirth, isVip) => {
+let insertGuest = (name:string, gender:string, dateOfBirth:string, isVip:boolean) => {
   return new Promise((resolve, reject) => {
     let guest = new Guest({
       name,
@@ -22,7 +22,7 @@ let insertGuest = (name, gender, dateOfBirth, isVip) => {
   });
 };
 
-let getOneGuest = (_id) => {
+let getOneGuest = (_id:string) => {
   return new Promise((resolve, reject) => {
     Guest.findOne({ _id }, (err, guest) => {
       err ? reject(err) : resolve(guest);
@@ -30,7 +30,7 @@ let getOneGuest = (_id) => {
   });
 };
 
-let updateOneGuest = (_id, newGuest) => {
+let updateOneGuest = (_id:string, newGuest:object) => {
   return new Promise((resolve, reject) => {
     Guest.findOneAndUpdate({ _id }, { $set: newGuest }, (err, guest) => {
       err ? reject(err) : resolve(guest);
@@ -38,7 +38,7 @@ let updateOneGuest = (_id, newGuest) => {
   });
 };
 
-let deleteOneGuest = (_id) => {
+let deleteOneGuest = (_id:string) => {
   return new Promise((resolve, reject) => {
     Guest.findByIdAndDelete({ _id }, (err, guest) => {
       err ? reject(err) : resolve(guest);
@@ -54,7 +54,7 @@ let femaleGuests = () => {
   });
 };
 
-module.exports = {
+export {
   getAllGuests,
   insertGuest,
   getOneGuest,

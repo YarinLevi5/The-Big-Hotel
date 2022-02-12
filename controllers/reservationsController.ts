@@ -7,7 +7,7 @@ let getAllReservations = () => {
     });
   });
 };
-let insertReservation = (room_id, capacity) => {
+let insertReservation = (room_id:string, capacity:number) => {
   return new Promise((resolve, reject) => {
     let reservation = new Reservation({
       room_id,
@@ -19,14 +19,14 @@ let insertReservation = (room_id, capacity) => {
   });
 };
 
-let getOneReservation = (_id) => {
+let getOneReservation = (_id:string) => {
   return new Promise((resolve, reject) => {
     Reservation.findOne({ _id }, (err, reservation) => {
       err ? reject(err) : resolve(reservation);
     });
   });
 };
-let updateOneReservation = (_id, newReservation) => {
+let updateOneReservation = (_id:string, newReservation:object) => {
   return new Promise((resolve, reject) => {
     Reservation.findOneAndUpdate(
       { _id },
@@ -37,7 +37,7 @@ let updateOneReservation = (_id, newReservation) => {
     );
   });
 };
-let deleteOneReservation = (_id) => {
+let deleteOneReservation = (_id:string) => {
   return new Promise((resolve, reject) => {
     Reservation.findByIdAndDelete({ _id }, (err, reservation) => {
       err ? reject(err) : resolve(reservation);
@@ -53,7 +53,7 @@ let roomsCapacity = () => {
   });
 };
 
-module.exports = {
+export {
   getAllReservations,
   insertReservation,
   getOneReservation,

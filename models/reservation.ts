@@ -1,13 +1,13 @@
-let mongoose = require("mongoose");
+import mongoose from "mongoose"
 const reservationSchema = new mongoose.Schema({
   roomId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Room",
-    require: true,
+    required: 'Choose room ID',
   },
   capacity: {
     type: Number,
-    require: true,
+    required:  'Enter capacity',
   },
 });
 const Reservation = mongoose.model("Reservation", reservationSchema);

@@ -18,6 +18,13 @@ $(function () {
     $.post("/rooms", roomObject, () => {
       alert("Data inserted");
       resetAllFields();
+    }).fail((err) => {
+      if (err.status == 400) {
+        let jsonErrors = err.responseJSON.errors;
+        $.each(jsonErrors, (field, err) => {
+          alert(err.message);
+        });
+      }
     });
   });
 

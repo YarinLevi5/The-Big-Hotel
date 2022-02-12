@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+h1 {
+  position: absolute;
+  top: 315px;
+  left: 380px;
+  color: red;
+  font-size: 20px;
+}
+.page-not-found {
+  text-align: center;
+  position: absolute;
+  top: 250px;
+  right: 270px;
+  width: 300px;
+  padding: 20px;
+  height: 200px;
+  background-color: burlywood;
+  border: 2px solid gray;
+  font-size: 20px;
+}
+.page-not-found p {
+  margin-top: 20px;
+  font-size: 20px;
+}
+.homeBtn {
+  margin-top: 40px;
+}
+.homeBtn a {
+  text-decoration: none;
+  font-size: 15px;
+  color: black;
+  padding: 15px;
+  background-color: white;
+}
+img {
+  width: 800px;
+  margin-top: -230px;
+}

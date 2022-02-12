@@ -1,5 +1,5 @@
-let express = require("express");
-const router = express.Router();
+import Express from 'express'
+const router = Express.Router();
 let {
   getAllReservations,
   insertReservation,
@@ -9,41 +9,41 @@ let {
   roomsCapacity,
 } = require("../controllers/reservationsController");
 
-router.get("/", (req, res) => {
+router.get("/", (req:Express.Request, res:Express.Response) => {
   getAllReservations()
     .then((reservation) => res.json(reservation))
     .catch((err) => res.json(err));
 });
 
-router.get("/reservation/capacity", (req, res) => {
+router.get("/reservation/capacity", (req:Express.Request, res:Express.Response) => {
   roomsCapacity()
     .then((reservation) => res.send(reservation))
-    .catch((err) => console.log(err));
+    .catch((err) =>  res.json(err));
 });
 
-router.post("/", (req, res) => {
+router.post("/", (req:Express.Request, res:Express.Response) => {
   let { room_id, capacity } = req.body;
   insertReservation(room_id, capacity)
     .then((reservation) => res.json(reservation))
-    .catch((err) => res.json(err));
+    .catch((err) =>  res.status(400).json(err));
 });
 
-router.get("/:reservationId", (req, res) => {
+router.get("/:reservationId", (req:Express.Request, res:Express.Response) => {
   getOneReservation(req.params.reservationId)
     .then((reservation) => res.json(reservation))
-    .catch((err) => console.log(err));
+    .catch((err) =>  res.json(err));
 });
 
-router.put("/:reservationId", (req, res) => {
+router.put("/:reservationId", (req:Express.Request, res:Express.Response) => {
   updateOneReservation(req.params.reservationId, req.body)
     .then((reservation) => res.json(reservation))
-    .catch((err) => console.log(err));
+    .catch((err) =>  res.json(err));
 });
 
-router.delete("/:reservationId", (req, res) => {
+router.delete("/:reservationId", (req:Express.Request, res:Express.Response) => {
   deleteOneReservation(req.params.reservationId)
     .then((reservation) => res.send(reservation))
-    .catch((err) => console.log(err));
+    .catch((err) =>  res.json(err));
 });
 
 module.exports = router;

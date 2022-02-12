@@ -33,6 +33,13 @@ $(function () {
     $.post("/reservations", reservationObj, () => {
       alert("Data inserted");
       resetField();
+    }).fail((err) => {
+      if (err.status == 400) {
+        let jsonErrors = err.responseJSON.errors;
+        $.each(jsonErrors, (field, err) => {
+          alert(err.message);
+        });
+      }
     });
   });
 
