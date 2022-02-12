@@ -24,8 +24,12 @@ There are three collections:
 
 If you get to any route that does not exist, you will get a 404 page. 
 
-## Screenshots
+> <img  width=700 src=https://user-images.githubusercontent.com/89860312/153732348-f7f6e645-6497-4425-b5b1-8fb5c6b6950c.png>
 
+## Screenshots
+<img width=700  src=https://user-images.githubusercontent.com/89860312/153732330-79ba1919-7f78-4234-9e75-b18c4849b5b1.png>
+<img width=700  src=https://user-images.githubusercontent.com/89860312/153732344-fbe9379e-f16f-4823-814e-1e21fbd395cd.png>
+<img width=700  src=https://user-images.githubusercontent.com/89860312/153732347-b553ca9f-3f58-4689-a3e6-0fe349ac4a40.png>
 
 
 ## Npm packages
