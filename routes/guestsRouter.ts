@@ -1,4 +1,5 @@
 import Express from 'express'
+import axios from 'axios'
 const router = Express.Router();
 let {
   getAllGuests,
@@ -20,6 +21,12 @@ router.get("/find/femaleGuests", (req:Express.Request, res:Express.Response) => 
     .then((guests:string) => res.json(guests))
     .catch((err:string) => res.json(err));
 });
+
+router.get('/showMeAll',(req:Express.Request, res:Express.Response)=>{
+  axios.get('http://localhost:4000/guests',{timeout:5000})
+  .then(guestsData=>res.json(guestsData.data))
+   .catch(err=>res.json(err))
+})
 
 router.post("/", (req:Express.Request, res:Express.Response) => {
   let { name, gender, dateOfBirth, isVip } = req.body;
