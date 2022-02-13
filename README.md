@@ -41,7 +41,8 @@ Dependencies:
     "@types/node": for typescript,
     "dotenv"- to get the environement variables,
     "express": express server,
-    "mongoose": model/schema. To connect MongoDB and do queries
+    "mongoose": model/schema. To connect MongoDB and do queries,
+    "axios": to do request from server to server. 
  
  DevDependencies: 
  
@@ -56,4 +57,4 @@ Dependencies:
 3. Javascript
 4. Typescript
 5. MongoDB
-6. Node.js - Express server, Controllers, router.
+6. Node.js - Express server, Controllers, router, axios.
