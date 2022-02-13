@@ -2,7 +2,7 @@ let Reservation = require("../models/reservation");
 
 let getAllReservations = () => {
   return new Promise((resolve, reject) => {
-    Reservation.find({}, (err, reservations) => {
+    Reservation.find((err, reservations) => {
       err ? reject(err) : resolve(reservations);
     });
   });

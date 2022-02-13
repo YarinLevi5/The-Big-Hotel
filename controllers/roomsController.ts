@@ -2,7 +2,7 @@ let Room = require("../models/room");
 
 let getAllRooms = () => {
   return new Promise((resolve, reject) => {
-    Room.find({}, (err, rooms) => {
+    Room.find((err, rooms) => {
       err ? reject(err) : resolve(rooms);
     });
   });

@@ -1,5 +1,4 @@
 import Express from 'express'
-import axios from 'axios'
 const router = Express.Router();
 let {
   getAllGuests,
@@ -8,6 +7,7 @@ let {
   updateOneGuest,
   deleteOneGuest,
   femaleGuests,
+  showAllGuests
 } =require ('../controllers/guestsController')
 
 router.get("/", (req:Express.Request, res:Express.Response) => {
@@ -23,7 +23,7 @@ router.get("/find/femaleGuests", (req:Express.Request, res:Express.Response) => 
 });
 
 router.get('/showMeAll',(req:Express.Request, res:Express.Response)=>{
-  axios.get('http://localhost:4000/guests',{timeout:5000})
+showAllGuests()
   .then(guestsData=>res.json(guestsData.data))
    .catch(err=>res.json(err))
 })

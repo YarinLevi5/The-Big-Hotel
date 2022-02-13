@@ -1,8 +1,9 @@
 let Guest = require("../models/guest");
+import axios from 'axios'
 
 let getAllGuests = () => {
   return new Promise((resolve, reject) => {
-    Guest.find({}, (err, guests) => {
+    Guest.find((err, guests) => {
       err ? reject(err) : resolve(guests);
     });
   });
@@ -54,6 +55,14 @@ let femaleGuests = () => {
   });
 };
 
+let showAllGuests=()=>{
+    return new Promise((resolve, reject) => {
+        axios.get('http://localhost:4000/guests',{timeout:5000})
+        .then(guest=>resolve(guest))
+        .catch(err=>reject(err))
+  });
+}
+
 export {
   getAllGuests,
   insertGuest,
@@ -61,4 +70,5 @@ export {
   updateOneGuest,
   deleteOneGuest,
   femaleGuests,
+  showAllGuests
 };
